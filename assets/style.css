@@ -295,3 +295,22 @@ footer div {
 		flex: 2;
 	}
 }
+
+.carousel{
+	position: relative;
+	overflow: hidden;
+}
+
+.carousel__Container::after{
+	content: '';
+	clear: both;
+	display: table;
+}
+
+.carousel__item{
+	float: left
+}
+
+
+
+
