@@ -33,7 +33,7 @@ ClickFlecheDroite.addEventListener("click", () => {
 	//incrémentaion de l'index//
 	index++;
 	console.log(index);
-img.src = slides[index].image;
+img.src = `./assets/images/slideshow/.image`;
 
 
 
@@ -64,9 +64,9 @@ for (i=0; i < SlidesNumber; i ++) {
 
 
 	//variables et const//
-  const img = document.querySelector("img .banner-img")
-  const textone = document.querySelector(" #banner p ")
-  const texttwo = document.querySelector(" #banner span ")
+  const img = document.querySelector(".banner-img");
+  const textone = document.querySelector(" #banner p ");
+  const texttwo = document.querySelector(" #banner span ");
 	let dots = document.querySelector(".dots");
 	console.log(dots);
 	
