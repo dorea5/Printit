@@ -19,13 +19,16 @@ const slides = [
 
 
 
-let ClickFlecheGauche = document.getElementById("flechegauche");
+let ClickFlecheGauche = document.querySelector(".arrow_left");
 ClickFlecheGauche.addEventListener("click" , () => 
 { console.log("eventlistener fleche gauche ok ")});
 
-let ClickFlecheDroite = document.getElementById("flechedroite");
-ClickFlecheDroite.addEventListener("click", () =>
-{console.log("eventlistener fleche droite ok")});
+let ClickFlecheDroite = document.querySelector(".arrow_right");
+ClickFlecheDroite.addEventListener("click", () => {
+	//fonction  pour changer src de l'image marche pas//
+	index++;
+img.src = slides[index].image
+{console.log("eventlistener fleche droite ok")}});
 
 
 console.log(slides);
@@ -40,18 +43,40 @@ for (i=0; i < SlidesNumber; i ++) {
 	
 	}
 
-
+  const img = document.querySelector("img .banner-img")
+  const textone = document.querySelector(" #banner p ")
+  const texttwo = document.querySelector(" #banner span ")
 	let dots = document.querySelector(".dots");
 	console.log(dots);
+	let index=0
+
+
 
 function DisplayDots() {
 	for (let i = 0 ; i < slides.length; i++){
 		const dot = document.createElement("div");
 		dot.classList.add("dot");
     dots.appendChild(dot);
+		//etape suivante//
+//si on se trouve sur index alors classe= dots_elector//
+//boucle for: if i==? dot.classList.add("dot_selector")//
+//ce qui peut donner: if i==*page actuelle* ; dot.classList.add("dot_selector")//
+
+		if (i==index){
+			dot.classList.add("dot_selected")
+		}
 
 }
 
 }
 
 DisplayDots();
+
+
+
+
+
+
+
+
+
