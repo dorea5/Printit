@@ -18,17 +18,35 @@ const slides = [
 ]
 
 
-
+let index=0
 let ClickFlecheGauche = document.querySelector(".arrow_left");
 ClickFlecheGauche.addEventListener("click" , () => 
-{ console.log("eventlistener fleche gauche ok ")});
+{ //décrémentation de l'index//
+	index--;
+	console.log(index);
+	img.src=slides[index].image;
+
+	 console.log("eventlistener fleche gauche ok ")});
 
 let ClickFlecheDroite = document.querySelector(".arrow_right");
 ClickFlecheDroite.addEventListener("click", () => {
-	//fonction  pour changer src de l'image marche pas//
+	//incrémentaion de l'index//
 	index++;
-img.src = slides[index].image
+	console.log(index);
+img.src = slides[index].image;
+
+
+
+
+
+//verif//
 {console.log("eventlistener fleche droite ok")}});
+
+
+
+
+
+
 
 
 console.log(slides);
@@ -43,12 +61,15 @@ for (i=0; i < SlidesNumber; i ++) {
 	
 	}
 
+
+
+	//variables et const//
   const img = document.querySelector("img .banner-img")
   const textone = document.querySelector(" #banner p ")
   const texttwo = document.querySelector(" #banner span ")
 	let dots = document.querySelector(".dots");
 	console.log(dots);
-	let index=0
+	
 
 
 
