@@ -20,27 +20,25 @@ const slides = [
 
 let index=0
 let ClickFlecheGauche = document.querySelector(".arrow_left");
-ClickFlecheGauche.addEventListener("click" , () => 
-{ //décrémentation de l'index//
+ClickFlecheGauche.addEventListener("click" , () => {
+
 	index--;
 	console.log(index);
-	img.src=slides[index].image;
-
-	 console.log("eventlistener fleche gauche ok ")});
+	if (index<0) {
+		index=slides.length-1;}
+		img.src=`./assets/images/slideshow/.image`;
+    console.log("eventlistener fleche gauche ok ")});
 
 let ClickFlecheDroite = document.querySelector(".arrow_right");
 ClickFlecheDroite.addEventListener("click", () => {
-	//incrémentaion de l'index//
+	
 	index++;
 	console.log(index);
+  if (index>0) {
+		index=slides.length+1;}
+	
 img.src = `./assets/images/slideshow/.image`;
-
-
-
-
-
-//verif//
-{console.log("eventlistener fleche droite ok")}});
+console.log("eventlistener fleche droite ok")});
 
 
 
