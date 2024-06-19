@@ -53,7 +53,7 @@ ClickFlecheGauche.addEventListener("click", () => {
 let ClickFlecheDroite = document.querySelector(".arrow_right");
 ClickFlecheDroite.addEventListener("click", () => {
   const dotslist = document.querySelectorAll(".dots .dot");
-	
+	dotslist[index].classList.remove("dot_selected");
 	index++;
 	console.log(index);
 
