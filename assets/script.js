@@ -31,7 +31,7 @@ console.log(dots);
 let index = 0
 
 
-//GAUCHE//
+//CLICK GAUCHE//
 let ClickFlecheGauche = document.querySelector(".arrow_left");
 ClickFlecheGauche.addEventListener("click", () => {
 
@@ -49,11 +49,11 @@ ClickFlecheGauche.addEventListener("click", () => {
 
 
 
-//DROITE//
+//CLICK DROIT//
 let ClickFlecheDroite = document.querySelector(".arrow_right");
 ClickFlecheDroite.addEventListener("click", () => {
-  const dotslist = document.querySelectorAll(".dots .dot");
-	dotslist[index].classList.remove("dot_selected");
+  const dotslist = document.querySelectorAll(".dots .dot");//*****declaration tableau*************//
+	dotslist[index].classList.remove("dot_selected");//********enlever dot_selected sur index en cours*************//
 	index++;
 	console.log(index);
 
@@ -61,7 +61,7 @@ ClickFlecheDroite.addEventListener("click", () => {
 	if (index > NbSlide - 1) {
 		index = 0
 	}
-
+  dotslist[index].classList.add("dot_selected");//********ajout de dot_selected sur lindex en cours***********//
   img.src = `./assets/images/slideshow/${slides[index].image}`;
 	text.innerHTML = `./assets/images/slideshow/${slides[index].tagLine}`;
 	console.log("eventlistener fleche droite ok")
@@ -92,9 +92,9 @@ function DisplayDots() {
 		dot.classList.add("dot");
 		dots.appendChild(dot);
 		//etape suivante//
-		//si on se trouve sur index alors classe= dots_elector//
-		//boucle for: if i==? dot.classList.add("dot_selector")//
-		//ce qui peut donner: if i==*page actuelle* ; dot.classList.add("dot_selector")//
+		//si on se trouve sur index alors classe= dots_selector//
+		//boucle for: if i==index dot.classList.add("dot_selector")//
+		//ce qui peut donner: if i==*index* ; dot.classList.add("dot_selector")//
 
 		if (i == index) {
 			dot.classList.add("dot_selected")
