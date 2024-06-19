@@ -18,52 +18,38 @@ const slides = [
 ]
 
 
+let NbSlide = slides.length;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const img = document.querySelector("#banner img");
+const text = document.querySelector(" #banner p ");
+let dots = document.querySelector(".dots");
+console.log(dots);
 
 
 
 let index = 0
 
 
-
+//GAUCHE//
 let ClickFlecheGauche = document.querySelector(".arrow_left");
 ClickFlecheGauche.addEventListener("click", () => {
 
 	index--;
- console.log(index);
+	console.log(index);
 
 	if (index < 0) {
-		index = slides.length - 1;
+		index = NbSlide - 1;
 	}
 
-	
-	
-	
-	img.src = `./assets/images/slideshow/.image`;
-	text.textContent = `./assets/images/slideshow/.tagLine`;
+	img.src = `./assets/images/slideshow/${slides[index].image}`;
+	text.innerHTML = `./assets/images/slideshow/${slides[index].tagLine}`;
 	console.log("eventlistener fleche gauche ok ")
 });
 
 
 
-
-
+//DROITE//
 let ClickFlecheDroite = document.querySelector(".arrow_right");
 ClickFlecheDroite.addEventListener("click", () => {
 
@@ -71,27 +57,23 @@ ClickFlecheDroite.addEventListener("click", () => {
 	console.log(index);
 
 
-	if (index > slides.lenght - 1) {
+	if (index > NbSlide - 1) {
 		index = 0
 	}
 
-
-
-	img.src = `./assets/images/slideshow/.image`;
-	text.textContent = `./assets/images/slideshow/.tagLine`;
+  img.src = `./assets/images/slideshow/${slides[index].image}`;
+	text.innerHTML = `./assets/images/slideshow/${slides[index].tagLine}`;
 	console.log("eventlistener fleche droite ok")
 });
 
 
 
 
-
-
-
-
 console.log(slides);
-let SlidesNumber = slides.length;
-for (i = 0; i < SlidesNumber; i++) {
+
+
+
+for (i = 0; i < NbSlide; i++) {
 	console.log(`tableau : ${slides[i]}`);
 	console.log(`valeur de i : ${i}`);
 	console.log(`propriété image ${slides[i].image}`);
@@ -103,17 +85,8 @@ for (i = 0; i < SlidesNumber; i++) {
 
 
 
-//variables et const//
-const img = document.querySelector("#banner img");
-const text = document.querySelector(" #banner p ");
-let dots = document.querySelector(".dots");
-console.log(dots);
-
-
-
-
 function DisplayDots() {
-	for (let i = 0; i < slides.length; i++) {
+	for (let i = 0; i < NbSlide; i++) {
 		const dot = document.createElement("div");
 		dot.classList.add("dot");
 		dots.appendChild(dot);
