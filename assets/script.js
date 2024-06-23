@@ -24,47 +24,49 @@ let NbSlide = slides.length;
 const img = document.querySelector("#banner img");
 const text = document.querySelector(" #banner p ");
 let dots = document.querySelector(".dots");
-console.log(dots);
+;
 
 
 
 let index = 0
 
 
-//CLICK GAUCHE//
+
 let ClickFlecheGauche = document.querySelector(".arrow_left");
 ClickFlecheGauche.addEventListener("click", () => {
+  const dotslist = document.querySelectorAll(".dots .dot");
+	dotslist[index].classList.remove("dot_selected");
 
 	index--;
-	console.log(index);
+	;
 
 	if (index < 0) {
 		index = NbSlide - 1;
 	}
-
+  dotslist[index].classList.add("dot_selected");
 	img.src = `./assets/images/slideshow/${slides[index].image}`;
-	text.innerHTML = `./assets/images/slideshow/${slides[index].tagLine}`;
-	console.log("eventlistener fleche gauche ok ")
+	text.innerHTML = slides[index].tagLine;
+	
 });
 
 
 
-//CLICK DROIT//
+
 let ClickFlecheDroite = document.querySelector(".arrow_right");
 ClickFlecheDroite.addEventListener("click", () => {
   const dotslist = document.querySelectorAll(".dots .dot");//*****declaration tableau*************//
 	dotslist[index].classList.remove("dot_selected");//********enlever dot_selected sur index en cours*************//
 	index++;
-	console.log(index);
+	;
 
 
 	if (index > NbSlide - 1) {
 		index = 0
 	}
-  dotslist[index].classList.add("dot_selected");//********ajout de dot_selected sur lindex en cours***********//
+  dotslist[index].classList.add("dot_selected");
   img.src = `./assets/images/slideshow/${slides[index].image}`;
-	text.innerHTML = `./assets/images/slideshow/${slides[index].tagLine}`;
-	console.log("eventlistener fleche droite ok")
+	text.innerHTML = slides[index].tagLine;
+	
 });
 
 
@@ -78,7 +80,6 @@ for (i = 0; i < NbSlide; i++) {
 	console.log(`tableau : ${slides[i]}`);
 	console.log(`valeur de i : ${i}`);
 	console.log(`propriété image ${slides[i].image}`);
-	// équivalent de console.log('propriété image '+slides[i].image);
 	console.log(`propriété tagline ${slides[i].tagLine}`);
 
 
@@ -91,11 +92,7 @@ function DisplayDots() {
 		const dot = document.createElement("div");
 		dot.classList.add("dot");
 		dots.appendChild(dot);
-		//etape suivante//
-		//si on se trouve sur index alors classe= dots_selector//
-		//boucle for: if i==index dot.classList.add("dot_selector")//
-		//ce qui peut donner: if i==*index* ; dot.classList.add("dot_selector")//
-
+		
 		if (i == index) {
 			dot.classList.add("dot_selected")
 		}
