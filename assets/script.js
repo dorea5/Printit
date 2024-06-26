@@ -54,8 +54,8 @@ ClickFlecheGauche.addEventListener("click", () => {
 
 let ClickFlecheDroite = document.querySelector(".arrow_right");
 ClickFlecheDroite.addEventListener("click", () => {
-  const dotslist = document.querySelectorAll(".dots .dot");//*****declaration tableau*************//
-	dotslist[index].classList.remove("dot_selected");//********enlever dot_selected sur index en cours*************//
+  const dotslist = document.querySelectorAll(".dots .dot");
+	dotslist[index].classList.remove("dot_selected");
 	index++;
 	;
 
